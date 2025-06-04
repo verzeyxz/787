@@ -307,18 +307,20 @@ background-image: linear-gradient(to top, #33010280
         allowfullscreen>
     </iframe>
 
-
-     <div id="myModal" class="modal">
-    <div class="modal-content">
-            <span class="close-button">&times;</span>
-
-                <img src="https://i.postimg.cc/ZRSKmw0n/MORPH.png" alt="คำอธิบายรูปภาพ" class="modal-image">
-    
-        <i class="fas fa-play fa-3x" style="color: #f39c12; margin-bottom: 0.5em;"></i>
+    <div id="myAwesomeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-content">
+                            <img src="https://i.postimg.cc/ZRSKmw0n/MORPH.png" alt="คำอธิบายรูปภาพ" class="modal-image">
+       <i class="fas fa-play fa-3x" style="color: #f39c12; margin-bottom: 0.5em;"></i>
         <h2>API แท้ เว็บตรงไม่ผ่านเอเยนต์</h2>
-        <button class="btn-grad" onclick="window.open('https://t.me/jxzem1223','_blank')">> อัพเดทใหม่ล่าสุด <</button>
+            <div class="modal-actions">
+                <button class="action-button" id="openLinkBtn" data-link="https://t.me/jxzem1223" target="_blank"> >> อัพเดทใหม่ล่าสุด !<<</button>
+                <button class="action-button secondary-button" id="closeModalBtnOutside">ปิด</button>
+            </div>
+            <button class="close-icon" aria-label="ปิด Modal">&times;</button>
+        </div>
     </div>
-</div>
+
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="script.js"></script>
