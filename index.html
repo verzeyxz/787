@@ -422,31 +422,25 @@
         </div>
     </div>
 
+       <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-      const modal = document.getElementById('myModal');
-      const modalImage = modal.querySelector('.modal-image');
-      const openLinkBtn = document.getElementById('openLinkBtn');
-      const closeBtn = modal.querySelector('.close-button');
+      // Show modal on page load
+      window.onload = function() {
+        document.getElementById('myModal').classList.add('show');
+      };
 
-      try {
-        const res = await fetch('get_banner.php?_=' + Date.now());
-        const data = await res.json();
-
-        modalImage.src = data.image || '';
-        openLinkBtn.dataset.link = data.link || '#';
-        modal.classList.add('show');
-      } catch (e) {
-        console.error('โหลด banner ล้มเหลว', e);
+      // Hide modal function
+      function hideModal() {
+        document.getElementById('myModal').classList.remove('show');
       }
 
-      closeBtn.addEventListener('click', () => modal.classList.remove('show'));
-      modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
-      openLinkBtn.addEventListener('click', () => {
-        const link = openLinkBtn.dataset.link;
-        if (link) window.open(link, '_blank');
+      // Also allow closing modal by clicking the close button
+      document.addEventListener('DOMContentLoaded', function() {
+        var closeBtn = document.querySelector('.close-button');
+        if (closeBtn) {
+          closeBtn.onclick = hideModal;
+        }
       });
-    });
     </script>
 </body>
 
